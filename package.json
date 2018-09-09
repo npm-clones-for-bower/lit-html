@@ -1,11 +1,54 @@
 {
-  "name": "lit-html",
-  "version": "0.10.2",
+  "_from": "lit-html",
+  "_id": "lit-html@0.11.1",
+  "_inBundle": false,
+  "_integrity": "sha1-rT3P6h269l+t8zX6HivZrBklU5Q=",
+  "_location": "/lit-html",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "lit-html",
+    "name": "lit-html",
+    "escapedName": "lit-html",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://artifactory.ing.net/artifactory/api/npm/releases_npm_all/lit-html/-/lit-html-0.11.1.tgz",
+  "_shasum": "ad3dcfea1dbaf65fadf335fa1e2bd9ac19255394",
+  "_spec": "lit-html",
+  "_where": "/Users/larsdenbakker/Workspace/code/other/temp",
+  "author": {
+    "name": "The Polymer Authors"
+  },
+  "bugs": {
+    "url": "https://github.com/Polymer/lit-html/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
   "description": "HTML template literals in JavaScript",
-  "license": "BSD-3-Clause",
-  "repository": "Polymer/lit-html",
-  "main": "lit-html.js",
-  "module": "lit-html.js",
+  "devDependencies": {
+    "@types/chai": "^4.1.0",
+    "@types/mocha": "^5.2.0",
+    "@webcomponents/webcomponentsjs": "^2.0.4",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "rollup": "^0.64.1",
+    "rollup-plugin-filesize": "^4.0.1",
+    "rollup-plugin-terser": "^1.0.1",
+    "tslint": "^5.9.1",
+    "typedoc": "^0.11.1",
+    "typescript": "^2.8.3",
+    "uglify-es": "^3.3.5",
+    "wct-browser-legacy": "^1.0.1",
+    "web-component-tester": "^6.8.0"
+  },
   "directories": {
     "test": "test"
   },
@@ -14,36 +57,29 @@
     "/lit-html.js.map",
     "/lit-html.d.ts",
     "/lib/",
+    "/directives/",
     "/src/",
     "!/src/test/"
   ],
+  "homepage": "https://github.com/Polymer/lit-html#readme",
+  "license": "BSD-3-Clause",
+  "main": "lit-html.js",
+  "module": "lit-html.js",
+  "name": "lit-html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Polymer/lit-html.git"
+  },
   "scripts": {
     "build": "tsc",
-    "gen-docs": "typedoc --readme none --mode modules --excludeNotExported --excludePrivate --exclude **/*_test.ts --out ./docs/api ./src",
-    "test": "npm run build && npm run lint && wct --npm",
-    "quicktest": "wct -l chrome -p --npm",
-    "checksize": "uglifyjs lit-html.js -mc --toplevel | gzip -9 | wc -c",
+    "checksize": "rollup -c ; rm lit-html.bundled.js",
     "format": "find src test | grep '\\.js$\\|\\.ts$' | xargs clang-format --style=file -i",
+    "gen-docs": "typedoc --readme none --mode modules --excludeNotExported --excludePrivate --exclude **/*_test.ts --out ./docs/api ./src",
     "lint": "tslint --project ./",
-    "prepare": "npm run build"
-  },
-  "author": "The Polymer Authors",
-  "devDependencies": {
-    "@types/chai": "^4.1.0",
-    "@types/mocha": "^5.2.0",
-    "@webcomponents/shadycss": "^1.2.1",
-    "@webcomponents/template": "^1.3.1",
-    "@webcomponents/webcomponentsjs": "^2.0.2",
-    "babel-polyfill": "^6.26.0",
-    "chai": "^4.1.2",
-    "mocha": "^5.2.0",
-    "tslint": "^5.9.1",
-    "typedoc": "^0.11.1",
-    "typescript": "^2.8.3",
-    "uglify-es": "^3.3.5",
-    "wct-browser-legacy": "^1.0.1",
-    "web-component-tester": "^6.6.0"
+    "prepare": "npm run build",
+    "quicktest": "wct -l chrome -p --npm",
+    "test": "npm run build && npm run lint && wct --npm"
   },
   "typings": "lit-html.d.ts",
-  "dependencies": {}
+  "version": "0.11.1"
 }
