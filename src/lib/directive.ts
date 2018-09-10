@@ -12,7 +12,7 @@
  * http://polymer.github.io/PATENTS.txt
  */
 
-import {Part} from './parts.js';
+import {Part} from './part.js';
 
 const directives = new WeakMap<any, Boolean>();
 
@@ -25,4 +25,5 @@ export const directive = <P = Part>(f: Directive<P>): Directive<P> => {
   return f;
 };
 
-export const isDirective = (o: any) => directives.has(o);
+export const isDirective = (o: any) =>
+    typeof o === 'function' && directives.has(o);

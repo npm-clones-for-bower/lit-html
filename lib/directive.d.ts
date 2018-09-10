@@ -11,7 +11,7 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-import { Part } from './parts.js';
+import { Part } from './part.js';
 export interface Directive<P = Part> {
     (part: P): void;
 }

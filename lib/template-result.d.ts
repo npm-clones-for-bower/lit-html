@@ -21,7 +21,7 @@ export declare class TemplateResult {
     values: any[];
     type: string;
     processor: TemplateProcessor;
-    constructor(strings: TemplateStringsArray, values: any[], type: string, processor?: TemplateProcessor);
+    constructor(strings: TemplateStringsArray, values: any[], type: string, processor: TemplateProcessor);
     /**
      * Returns a string of HTML used to create a <template> element.
      */

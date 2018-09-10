@@ -14,9 +14,7 @@
 import { TemplateFactory } from './template-factory.js';
 import { TemplateInstance } from './template-instance.js';
 import { TemplateResult } from './template-result.js';
-export declare type TemplateContainer = (Element | DocumentFragment) & {
-    __templateInstance?: TemplateInstance;
-};
+export declare const templateInstances: WeakMap<Node, TemplateInstance>;
 /**
  * Renders a template to a container.
  *

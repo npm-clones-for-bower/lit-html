@@ -11,10 +11,13 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
+import { TemplateFactory } from '../lit-html.js';
 import { Part } from './part.js';
 import { NodePart } from './parts.js';
-import { TemplateFactory } from './template-factory.js';
-export interface TemplateProcessor {
+/**
+ * Creates Parts when a template is instantiated.
+ */
+export declare class DefaultTemplateProcessor {
     /**
      * Create parts for an attribute-position binding, given the event, attribute
      * name, and string literals.
@@ -31,3 +34,4 @@ export interface TemplateProcessor {
      */
     handleTextExpression(templateFactory: TemplateFactory): NodePart;
 }
+export declare const defaultTemplateProcessor: DefaultTemplateProcessor;

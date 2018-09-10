@@ -11,7 +11,7 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-import { Part } from './parts.js';
+import { Part } from './part.js';
 import { TemplateFactory } from './template-factory.js';
 import { TemplateProcessor } from './template-processor.js';
 import { Template } from './template.js';
