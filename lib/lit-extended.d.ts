@@ -11,8 +11,11 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-import { AttributePart, Part, SVGTemplateResult, TemplateInstance, TemplatePart, TemplateResult } from '../lit-html.js';
-export { render } from '../lit-html.js';
+import { Part } from './parts.js';
+import { TemplateProcessor } from './template-processor.js';
+import { SVGTemplateResult, TemplateResult } from './template-result.js';
+export { BooleanAttributePart, EventPart } from './parts.js';
+export { render } from './render.js';
 /**
  * Interprets a template literal as a lit-extended HTML template.
  */
@@ -45,27 +48,10 @@ export declare const svg: (strings: TemplateStringsArray, ...values: any[]) => S
  *
  *     html`<button on-click=${(e)=> this.onClickHandler(e)}>Buy Now</button>`
  *
+ * @deprecated Please use /lit-html.js instead. lit-extended will be removed in
+ *     a future version.
  */
-export declare const extendedPartCallback: (instance: TemplateInstance, templatePart: TemplatePart, node: Node) => Part;
-/**
- * Implements a boolean attribute, roughly as defined in the HTML
- * specification.
- *
- * If the value is truthy, then the attribute is present with a value of
- * ''. If the value is falsey, the attribute is removed.
- */
-export declare class BooleanAttributePart extends AttributePart {
-    setValue(values: any[], startIndex: number): void;
+export declare class LitExtendedTemplateProcessor extends TemplateProcessor {
+    handleAttributeExpressions(element: Element, name: string, strings: string[]): Part[];
 }
-export declare class PropertyPart extends AttributePart {
-    setValue(values: any[], startIndex: number): void;
-}
-export declare class EventPart implements Part {
-    instance: TemplateInstance;
-    element: Element;
-    eventName: string;
-    private _listener;
-    constructor(instance: TemplateInstance, element: Element, eventName: string);
-    setValue(value: any): void;
-    handleEvent(event: Event): void;
-}
+export declare const templateProcessor: LitExtendedTemplateProcessor;

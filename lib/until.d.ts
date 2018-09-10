@@ -11,8 +11,7 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-import { DirectiveFn, NodePart } from '../lit-html.js';
 /**
- * Display `defaultContent` until `promise` resolves.
+ * @deprecated import /directives/until.js instead
  */
-export declare const until: (promise: Promise<any>, defaultContent: any) => DirectiveFn<NodePart>;
+export * from '../directives/until.js';
