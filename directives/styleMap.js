@@ -11,25 +11,25 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-import { directive, AttributePart, PropertyPart } from '../lit-html.js';
+import { AttributePart, directive, PropertyPart } from '../lit-html.js';
 /**
  * Stores the StyleInfo object applied to a given AttributePart.
  * Used to unset existing values when a new StyleInfo object is applied.
  */
 const styleMapCache = new WeakMap();
 /**
- * Stores AttributeParts that have had static styles applied (e.g. `height: 0;` in
- * style="height: 0; ${styleMap()}"). Static styles are applied only the first time
- * the directive is run on a part.
+ * Stores AttributeParts that have had static styles applied (e.g. `height: 0;`
+ * in style="height: 0; ${styleMap()}"). Static styles are applied only the
+ * first time the directive is run on a part.
  */
 // Note, could be a WeakSet, but prefer not requiring this polyfill.
 const styleMapStatics = new WeakMap();
 /**
- * A directive that applies CSS properties. This must be used in the `style` attribute
- * and must be the only part used in the attribute. It takes the property names in
- * the `styleInfo` object and adds the property values as a css style propertes.
- * For example `{backgroundColor: 'red', borderTop: '5px'}` sets these properties
- * to the element's style.
+ * A directive that applies CSS properties. This must be used in the `style`
+ * attribute and must be the only part used in the attribute. It takes the
+ * property names in the `styleInfo` object and adds the property values as a
+ * css style propertes. For example `{backgroundColor: 'red', borderTop: '5px'}`
+ * sets these properties to the element's style.
  * @param styleInfo {StyleInfo}
  */
 export const styleMap = (styleInfo) => directive((part) => {

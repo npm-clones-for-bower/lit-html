@@ -11,7 +11,7 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-import { directive, AttributePart, PropertyPart } from '../lit-html.js';
+import { AttributePart, directive, PropertyPart } from '../lit-html.js';
 // On IE11, classList.toggle doesn't accept a second argument.
 // Since this is so minor, we just polyfill it.
 if (window.navigator.userAgent.match('Trident')) {
@@ -38,11 +38,12 @@ const classMapCache = new WeakMap();
 // Note, could be a WeakSet, but prefer not requiring this polyfill.
 const classMapStatics = new WeakMap();
 /**
- * A directive that applies CSS classes. This must be used in the `class` attribute
- * and must be the only part used in the attribute. It takes each property in the
- * `classInfo` argument and adds the property name to the element's `classList`
- * if the property value is truthy; if the property value is falsey, the
- * property name is removed from the element's `classList`. For example
+ * A directive that applies CSS classes. This must be used in the `class`
+ * attribute and must be the only part used in the attribute. It takes each
+ * property in the `classInfo` argument and adds the property name to the
+ * element's `classList` if the property value is truthy; if the property value
+ * is falsey, the property name is removed from the element's `classList`. For
+ * example
  * `{foo: bar}` applies the class `foo` if the value of `bar` is truthy.
  * @param classInfo {ClassInfo}
  */

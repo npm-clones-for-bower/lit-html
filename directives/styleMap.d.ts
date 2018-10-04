@@ -11,16 +11,16 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-import { Directive, AttributePart } from '../lit-html.js';
+import { AttributePart, Directive } from '../lit-html.js';
 export interface StyleInfo {
     [name: string]: string;
 }
 /**
- * A directive that applies CSS properties. This must be used in the `style` attribute
- * and must be the only part used in the attribute. It takes the property names in
- * the `styleInfo` object and adds the property values as a css style propertes.
- * For example `{backgroundColor: 'red', borderTop: '5px'}` sets these properties
- * to the element's style.
+ * A directive that applies CSS properties. This must be used in the `style`
+ * attribute and must be the only part used in the attribute. It takes the
+ * property names in the `styleInfo` object and adds the property values as a
+ * css style propertes. For example `{backgroundColor: 'red', borderTop: '5px'}`
+ * sets these properties to the element's style.
  * @param styleInfo {StyleInfo}
  */
 export declare const styleMap: (styleInfo: StyleInfo) => Directive<AttributePart>;
