@@ -12,7 +12,7 @@
  * http://polymer.github.io/PATENTS.txt
  */
 import { NodePart } from './parts.js';
-import { TemplateFactory } from './template-factory.js';
+import { RenderOptions } from './render-options.js';
 import { TemplateResult } from './template-result.js';
 export declare const parts: WeakMap<Node, NodePart>;
 /**
@@ -26,7 +26,9 @@ export declare const parts: WeakMap<Node, NodePart>;
  * @param container A DOM parent to render to. The entire contents are either
  *     replaced, or efficiently updated if the same result type was previous
  *     rendered there.
- * @param templateFactory a function to create a Template or retreive one from
- *     cache.
+ * @param options RenderOptions for the entire render tree rendered to this
+ *     container. Render options must *not* change between renders to the same
+ *     container, as those changes will not effect previously rendered DOM.
  */
-export declare function render(result: TemplateResult, container: Element | DocumentFragment, templateFactory?: TemplateFactory): void;
+export declare const render: (result: TemplateResult, container: Element | DocumentFragment, options?: Partial<RenderOptions> | undefined) => void;
+//# sourceMappingURL=render.d.ts.map

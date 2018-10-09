@@ -13,3 +13,4 @@
  */
 import { Directive, NodePart } from '../lit-html.js';
 export declare const unsafeHTML: (value: any) => Directive<NodePart>;
+//# sourceMappingURL=unsafe-html.d.ts.map

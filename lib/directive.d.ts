@@ -17,3 +17,4 @@ export interface Directive<P = Part> {
 }
 export declare const directive: <P = Part>(f: Directive<P>) => Directive<P>;
 export declare const isDirective: (o: any) => boolean;
+//# sourceMappingURL=directive.d.ts.map

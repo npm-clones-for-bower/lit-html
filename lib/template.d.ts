@@ -85,3 +85,4 @@ export declare const createMarker: () => Comment;
  *    * (') then any non-(')
  */
 export declare const lastAttributeNameRegex: RegExp;
+//# sourceMappingURL=template.d.ts.map

@@ -16,3 +16,4 @@ import { Directive, NodePart } from '../lit-html.js';
  * Display `defaultContent` until `promise` resolves.
  */
 export declare const until: (promise: Promise<any>, defaultContent: any) => Directive<NodePart>;
+//# sourceMappingURL=until.d.ts.map

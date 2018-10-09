@@ -35,3 +35,4 @@ export declare function removeNodesFromTemplate(template: Template, nodesToRemov
  * part indices are updated to match the mutated Template DOM.
  */
 export declare function insertNodeIntoTemplate(template: Template, node: Node, refNode?: Node | null): void;
+//# sourceMappingURL=modify-template.d.ts.map

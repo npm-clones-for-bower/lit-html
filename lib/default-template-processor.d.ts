@@ -11,13 +11,14 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-import { TemplateFactory } from '../lit-html.js';
 import { Part } from './part.js';
 import { NodePart } from './parts.js';
+import { RenderOptions } from './render-options.js';
+import { TemplateProcessor } from './template-processor.js';
 /**
  * Creates Parts when a template is instantiated.
  */
-export declare class DefaultTemplateProcessor {
+export declare class DefaultTemplateProcessor implements TemplateProcessor {
     /**
      * Create parts for an attribute-position binding, given the event, attribute
      * name, and string literals.
@@ -27,11 +28,12 @@ export declare class DefaultTemplateProcessor {
      * @param strings The string literals. There are always at least two strings,
      *   event for fully-controlled bindings with a single expression.
      */
-    handleAttributeExpressions(element: Element, name: string, strings: string[]): Part[];
+    handleAttributeExpressions(element: Element, name: string, strings: string[], options: RenderOptions): Part[];
     /**
      * Create parts for a text-position binding.
      * @param templateFactory
      */
-    handleTextExpression(templateFactory: TemplateFactory): NodePart;
+    handleTextExpression(options: RenderOptions): NodePart;
 }
 export declare const defaultTemplateProcessor: DefaultTemplateProcessor;
+//# sourceMappingURL=default-template-processor.d.ts.map

@@ -32,3 +32,4 @@ import { Directive, NodePart } from '../lit-html.js';
  * @param valueFn function which returns the render value
  */
 export declare const guard: (expression: any, valueFn: () => any) => Directive<NodePart>;
+//# sourceMappingURL=guard.d.ts.map

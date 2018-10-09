@@ -12,7 +12,7 @@
  * http://polymer.github.io/PATENTS.txt
  */
 import { Part } from './part.js';
-import { TemplateFactory } from './template-factory.js';
+import { RenderOptions } from './render-options.js';
 export declare const isPrimitive: (value: any) => boolean;
 /**
  * Sets attribute values for AttributeParts, so that the value is only set once
@@ -40,12 +40,12 @@ export declare class AttributePart implements Part {
     commit(): void;
 }
 export declare class NodePart implements Part {
-    templateFactory: TemplateFactory;
+    options: RenderOptions;
     startNode: Node;
     endNode: Node;
     value: any;
     _pendingValue: any;
-    constructor(templateFactory: TemplateFactory);
+    constructor(options: RenderOptions);
     /**
      * Inserts this part into a container.
      *
@@ -117,13 +117,27 @@ export declare class PropertyCommitter extends AttributeCommitter {
 }
 export declare class PropertyPart extends AttributePart {
 }
+declare global {
+    interface EventListenerOptions {
+        capture?: boolean;
+        once?: boolean;
+        passive?: boolean;
+    }
+}
 export declare class EventPart implements Part {
     element: Element;
     eventName: string;
+    eventContext?: EventTarget;
     value: any;
+    _options?: {
+        capture?: boolean;
+        passive?: boolean;
+        once?: boolean;
+    };
     _pendingValue: any;
-    constructor(element: Element, eventName: string);
+    constructor(element: Element, eventName: string, eventContext?: EventTarget);
     setValue(value: any): void;
     commit(): void;
     handleEvent(event: Event): void;
 }
+//# sourceMappingURL=parts.d.ts.map

@@ -24,3 +24,4 @@ export declare const reparentNodes: (container: Node, start: Node | null, end?: 
  * (exclusive), from `container`.
  */
 export declare const removeNodes: (container: Node, startNode: Node | null, endNode?: Node | null) => void;
+//# sourceMappingURL=dom.d.ts.map

@@ -23,15 +23,18 @@ import { Directive, NodePart } from '../lit-html.js';
  *
  * Example:
  *
+ * ```
  * let checked = false;
  *
  * html`
  *   when(checked, () => html`Checkmark is checked`, () => html`Checkmark is not
  * checked`);
  * `
+ * ```
  *
  * @param condition the condition to test truthiness against
  * @param trueValue the value to render given a true condition
  * @param falseValue the value to render given a false condition
  */
 export declare const when: (condition: any, trueValue: () => any, falseValue: () => any) => Directive<NodePart>;
+//# sourceMappingURL=when.d.ts.map

@@ -13,7 +13,7 @@
  */
 import { Part } from './part.js';
 import { NodePart } from './parts.js';
-import { TemplateFactory } from './template-factory.js';
+import { RenderOptions } from './render-options.js';
 export interface TemplateProcessor {
     /**
      * Create parts for an attribute-position binding, given the event, attribute
@@ -24,10 +24,11 @@ export interface TemplateProcessor {
      * @param strings The string literals. There are always at least two strings,
      *   event for fully-controlled bindings with a single expression.
      */
-    handleAttributeExpressions(element: Element, name: string, strings: string[]): Part[];
+    handleAttributeExpressions(element: Element, name: string, strings: string[], options: RenderOptions): Part[];
     /**
      * Create parts for a text-position binding.
-     * @param templateFactory
+     * @param partOptions
      */
-    handleTextExpression(templateFactory: TemplateFactory): NodePart;
+    handleTextExpression(options: RenderOptions): NodePart;
 }
+//# sourceMappingURL=template-processor.d.ts.map

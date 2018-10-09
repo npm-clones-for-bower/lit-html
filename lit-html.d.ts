@@ -33,3 +33,4 @@ export declare const html: (strings: TemplateStringsArray, ...values: any[]) => 
  * render to and update a container.
  */
 export declare const svg: (strings: TemplateStringsArray, ...values: any[]) => SVGTemplateResult;
+//# sourceMappingURL=lit-html.d.ts.map

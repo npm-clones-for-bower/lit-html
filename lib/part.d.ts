@@ -19,3 +19,4 @@ export interface Part {
  * should not be written to the DOM.
  */
 export declare const noChange: {};
+//# sourceMappingURL=part.d.ts.map

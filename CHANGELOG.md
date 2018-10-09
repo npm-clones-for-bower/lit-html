@@ -16,9 +16,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- ### Removed -->
 <!-- ### Fixed -->
 
+## [0.12.0] - 2018-10-05
+### Changed
+* Re-implemented repeat directive for better performance ([#501](https://github.com/Polymer/lit-html/pull/501))
+* Updated TypeScript dependency to 3.1
+* [Breaking] `render()` now takes an options object as the third argument. ([#523](https://github.com/Polymer/lit-html/pull/523))
+### Added
+* Event listeners are called with a configurable `this` reference, which is set via the `eventContext` option to `render()`. ([#523](https://github.com/Polymer/lit-html/pull/523))
+* Support for event listener options, by passing the listener itself as both the second and third arguments to add/removeEventListener().
+
+<!-- ### Removed -->
+<!-- ### Fixed -->
+
 ## [0.11.4] - 2018-09-17
 ### Fixed
-* Fixed issues with `shady-render` introduced in 0.11.3 ([#504](https://github.com/Polymer/lit-html/issues/504) and [#505](https://github.com/Polymer/lit-html/issues/505).
+* Fixed issues with `shady-render` introduced in 0.11.3 ([#504](https://github.com/Polymer/lit-html/issues/504) and [#505](https://github.com/Polymer/lit-html/issues/505)).
 
 ## [0.11.3] - 2018-09-13
 ### Changed

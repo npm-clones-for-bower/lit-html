@@ -24,3 +24,4 @@ export interface StyleInfo {
  * @param styleInfo {StyleInfo}
  */
 export declare const styleMap: (styleInfo: StyleInfo) => Directive<AttributePart>;
+//# sourceMappingURL=styleMap.d.ts.map

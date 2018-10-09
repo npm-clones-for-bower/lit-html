@@ -19,3 +19,4 @@ import { Directive, Part } from '../lit-html.js';
  * For other part types, this directive is a no-op.
  */
 export declare const ifDefined: (value: any) => Directive<Part>;
+//# sourceMappingURL=if-defined.d.ts.map

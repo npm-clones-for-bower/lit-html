@@ -31,3 +31,4 @@ import { Directive, NodePart } from '../lit-html.js';
  *     value. Useful for generating templates for each item in the iterable.
  */
 export declare const asyncReplace: <T>(value: AsyncIterable<T>, mapper?: ((v: T, index?: number | undefined) => any) | undefined) => Directive<NodePart>;
+//# sourceMappingURL=async-replace.d.ts.map

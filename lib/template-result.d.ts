@@ -23,7 +23,7 @@ export declare class TemplateResult {
     processor: TemplateProcessor;
     constructor(strings: TemplateStringsArray, values: any[], type: string, processor: TemplateProcessor);
     /**
-     * Returns a string of HTML used to create a <template> element.
+     * Returns a string of HTML used to create a `<template>` element.
      */
     getHTML(): string;
     getTemplateElement(): HTMLTemplateElement;
@@ -31,11 +31,12 @@ export declare class TemplateResult {
 /**
  * A TemplateResult for SVG fragments.
  *
- * This class wraps HTMl in an <svg> tag in order to parse its contents in the
- * SVG namespace, then modifies the template to remove the <svg> tag so that
+ * This class wraps HTMl in an `<svg>` tag in order to parse its contents in the
+ * SVG namespace, then modifies the template to remove the `<svg>` tag so that
  * clones only container the original fragment.
  */
 export declare class SVGTemplateResult extends TemplateResult {
     getHTML(): string;
     getTemplateElement(): HTMLTemplateElement;
 }
+//# sourceMappingURL=template-result.d.ts.map

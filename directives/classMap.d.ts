@@ -26,3 +26,4 @@ export interface ClassInfo {
  * @param classInfo {ClassInfo}
  */
 export declare const classMap: (classInfo: ClassInfo) => Directive<AttributePart>;
+//# sourceMappingURL=classMap.d.ts.map

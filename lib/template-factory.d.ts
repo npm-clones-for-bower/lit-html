@@ -40,3 +40,4 @@ export declare type TemplateFactory = (result: TemplateResult) => Template;
  */
 export declare function templateFactory(result: TemplateResult): Template;
 export declare const templateCaches: Map<string, Map<TemplateStringsArray, Template>>;
+//# sourceMappingURL=template-factory.d.ts.map
