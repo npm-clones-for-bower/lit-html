@@ -11,12 +11,12 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-import { Directive, Part } from '../lit-html.js';
+import { Part } from '../lit-html.js';
 /**
  * For AttributeParts, sets the attribute if the value is defined and removes
  * the attribute if the value is undefined.
  *
  * For other part types, this directive is a no-op.
  */
-export declare const ifDefined: (value: any) => Directive<Part>;
+export declare const ifDefined: (value: any) => (part: Part) => void;
 //# sourceMappingURL=if-defined.d.ts.map

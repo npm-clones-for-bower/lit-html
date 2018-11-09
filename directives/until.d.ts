@@ -11,9 +11,9 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-import { Directive, NodePart } from '../lit-html.js';
+import { Part } from '../lit-html.js';
 /**
  * Display `defaultContent` until `promise` resolves.
  */
-export declare const until: (promise: Promise<any>, defaultContent: any) => Directive<NodePart>;
+export declare const until: (promise: Promise<any>, defaultContent: any) => (part: Part) => void;
 //# sourceMappingURL=until.d.ts.map

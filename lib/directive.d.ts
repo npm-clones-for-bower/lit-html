@@ -12,9 +12,27 @@
  * http://polymer.github.io/PATENTS.txt
  */
 import { Part } from './part.js';
-export interface Directive<P = Part> {
-    (part: P): void;
-}
-export declare const directive: <P = Part>(f: Directive<P>) => Directive<P>;
+export declare type DirectiveFn = (part: Part) => void;
+/**
+ * Brands a function as a directive so that lit-html will call the function
+ * during template rendering, rather than passing as a value.
+ *
+ * @param f The directive factory function. Must be a function that returns a
+ * function of the signature `(part: Part) => void`. The returned function will
+ * be called with the part object
+ *
+ * @example
+ *
+ * ```
+ * import {directive, html} from 'lit-html';
+ *
+ * const immutable = directive((v) => (part) => {
+ *   if (part.value !== v) {
+ *     part.setValue(v)
+ *   }
+ * });
+ * ```
+ */
+export declare const directive: <F extends Function>(f: F) => F;
 export declare const isDirective: (o: any) => boolean;
 //# sourceMappingURL=directive.d.ts.map

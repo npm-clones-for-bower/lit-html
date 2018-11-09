@@ -11,9 +11,9 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-import { Directive, NodePart } from '../lit-html.js';
-export declare type KeyFn<T> = (item: T, index?: number) => any;
-export declare type ItemTemplate<T> = (item: T, index?: number) => any;
+import { DirectiveFn } from '../lib/directive.js';
+export declare type KeyFn<T> = (item: T, index: number) => any;
+export declare type ItemTemplate<T> = (item: T, index: number) => any;
 /**
  * A directive that repeats a series of values (usually `TemplateResults`)
  * generated from an iterable, and updates those items efficiently when the
@@ -26,13 +26,12 @@ export declare type ItemTemplate<T> = (item: T, index?: number) => any;
  * way to use `repeat` since it performs minimum unnecessary work for insertions
  * amd removals.
  *
- * IMPORTANT: if providing a `keyFn`, keys *must* be unique for all items in a
- * given call to `repeat`. The behavior when providing duplicate keys is
- * undefined.
+ * IMPORTANT: If providing a `keyFn`, keys *must* be unique for all items in a
+ * given call to `repeat`. The behavior when two or more items have the same key
+ * is undefined.
  *
  * If no `keyFn` is provided, this directive will perform similar to mapping
  * items to values, and DOM will be reused against potentially different items.
  */
-export declare function repeat<T>(items: Iterable<T>, keyFn: KeyFn<T>, template: ItemTemplate<T>): Directive<NodePart>;
-export declare function repeat<T>(items: Iterable<T>, template: ItemTemplate<T>): Directive<NodePart>;
+export declare const repeat: <T>(items: Iterable<T>, keyFnOrTemplate: KeyFn<T> | ItemTemplate<T>, template?: ItemTemplate<T> | undefined) => DirectiveFn;
 //# sourceMappingURL=repeat.d.ts.map

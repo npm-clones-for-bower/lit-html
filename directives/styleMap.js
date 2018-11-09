@@ -32,7 +32,7 @@ const styleMapStatics = new WeakMap();
  * sets these properties to the element's style.
  * @param styleInfo {StyleInfo}
  */
-export const styleMap = (styleInfo) => directive((part) => {
+export const styleMap = directive((styleInfo) => (part) => {
     if (!(part instanceof AttributePart) || (part instanceof PropertyPart) ||
         part.committer.name !== 'style' || part.committer.parts.length > 1) {
         throw new Error('The `styleMap` directive must be used in the style attribute ' +

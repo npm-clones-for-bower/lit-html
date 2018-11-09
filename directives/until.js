@@ -15,7 +15,7 @@ import { directive } from '../lit-html.js';
 /**
  * Display `defaultContent` until `promise` resolves.
  */
-export const until = (promise, defaultContent) => directive((part) => {
+export const until = directive((promise, defaultContent) => (part) => {
     part.setValue(defaultContent);
     part.commit();
     part.setValue(promise);

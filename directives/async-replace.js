@@ -37,8 +37,11 @@ import { directive, NodePart } from '../lit-html.js';
  * @param mapper An optional function that maps from (value, index) to another
  *     value. Useful for generating templates for each item in the iterable.
  */
-export const asyncReplace = (value, mapper) => directive(async (part) => {
+export const asyncReplace = directive((value, mapper) => async (part) => {
     var e_1, _a;
+    if (!(part instanceof NodePart)) {
+        throw new Error('asyncReplace can only be used in text bindings');
+    }
     // If we've already set up this particular iterable, we don't need
     // to do anything.
     if (value === part.value) {

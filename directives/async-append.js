@@ -36,8 +36,11 @@ import { createMarker, directive, NodePart } from '../lit-html.js';
  * @param mapper An optional function that maps from (value, index) to another
  *     value. Useful for generating templates for each item in the iterable.
  */
-export const asyncAppend = (value, mapper) => directive(async (part) => {
+export const asyncAppend = directive((value, mapper) => async (part) => {
     var e_1, _a;
+    if (!(part instanceof NodePart)) {
+        throw new Error('asyncAppend can only be used in text bindings');
+    }
     // If we've already set up this particular iterable, we don't need
     // to do anything.
     if (value === part.value) {
@@ -51,8 +54,8 @@ export const asyncAppend = (value, mapper) => directive(async (part) => {
     try {
         for (var value_1 = __asyncValues(value), value_1_1; value_1_1 = await value_1.next(), !value_1_1.done;) {
             let v = value_1_1.value;
-            // When we get the first value, clear the part. This lets the previous
-            // value display until we can replace it.
+            // When we get the first value, clear the part. This lets the
+            // previous value display until we can replace it.
             if (i === 0) {
                 part.clear();
             }

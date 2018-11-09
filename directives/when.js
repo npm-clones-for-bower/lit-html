@@ -37,7 +37,10 @@ const partCaches = new WeakMap();
  * @param trueValue the value to render given a true condition
  * @param falseValue the value to render given a false condition
  */
-export const when = (condition, trueValue, falseValue) => directive((parentPart) => {
+export const when = directive((condition, trueValue, falseValue) => (parentPart) => {
+    if (!(parentPart instanceof NodePart)) {
+        throw new Error('when can only be used in text bindings');
+    }
     let cache = partCaches.get(parentPart);
     // Create a new cache if this is the first render
     if (cache === undefined) {

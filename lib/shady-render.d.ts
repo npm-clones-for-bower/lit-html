@@ -14,13 +14,6 @@
 import { RenderOptions } from './render-options.js';
 import { TemplateResult } from './template-result.js';
 export { html, svg, TemplateResult } from '../lit-html.js';
-declare global {
-    interface Window {
-        ShadyCSS: any;
-    }
-    class ShadowRoot {
-    }
-}
 export interface ShadyRenderOptions extends Partial<RenderOptions> {
     scopeName: string;
 }

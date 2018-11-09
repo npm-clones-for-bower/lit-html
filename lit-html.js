@@ -13,16 +13,17 @@
  */
 import { defaultTemplateProcessor } from './lib/default-template-processor.js';
 import { SVGTemplateResult, TemplateResult } from './lib/template-result.js';
-export * from './lib/template-result.js';
-export * from './lib/template.js';
-export * from './lib/default-template-processor.js';
-export * from './lib/template-instance.js';
-export * from './lib/part.js';
-export * from './lib/parts.js';
-export * from './lib/dom.js';
-export * from './lib/directive.js';
-export * from './lib/render.js';
-export * from './lib/template-factory.js';
+export { DefaultTemplateProcessor, defaultTemplateProcessor } from './lib/default-template-processor.js';
+export { directive, isDirective } from './lib/directive.js';
+// TODO(justinfagnani): remove line when we get NodePart moving methods
+export { removeNodes, reparentNodes } from './lib/dom.js';
+export { noChange } from './lib/part.js';
+export { AttributeCommitter, AttributePart, BooleanAttributePart, EventPart, isPrimitive, NodePart, PropertyCommitter, PropertyPart } from './lib/parts.js';
+export { parts, render } from './lib/render.js';
+export { templateCaches, templateFactory } from './lib/template-factory.js';
+export { TemplateInstance } from './lib/template-instance.js';
+export { SVGTemplateResult, TemplateResult } from './lib/template-result.js';
+export { createMarker, isTemplatePartActive, Template } from './lib/template.js';
 /**
  * Interprets a template literal as an HTML template that can efficiently
  * render to and update a container.

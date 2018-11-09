@@ -47,7 +47,7 @@ const classMapStatics = new WeakMap();
  * `{foo: bar}` applies the class `foo` if the value of `bar` is truthy.
  * @param classInfo {ClassInfo}
  */
-export const classMap = (classInfo) => directive((part) => {
+export const classMap = directive((classInfo) => (part) => {
     if (!(part instanceof AttributePart) || (part instanceof PropertyPart) ||
         part.committer.name !== 'class' || part.committer.parts.length > 1) {
         throw new Error('The `classMap` directive must be used in the `class` attribute ' +

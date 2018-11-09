@@ -11,7 +11,7 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-import { Directive, NodePart } from '../lit-html.js';
+import { Part } from '../lit-html.js';
 /**
  * Creates a guard directive. Prevents any re-render until the identity of the
  * expression changes, for example when a primitive changes value or when an
@@ -31,5 +31,5 @@ import { Directive, NodePart } from '../lit-html.js';
  * @param expression the expression to check before re-rendering
  * @param valueFn function which returns the render value
  */
-export declare const guard: (expression: any, valueFn: () => any) => Directive<NodePart>;
+export declare const guard: (expression: any, valueFn: () => any) => (part: Part) => void;
 //# sourceMappingURL=guard.d.ts.map

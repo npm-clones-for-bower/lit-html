@@ -11,6 +11,6 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-import { Directive, NodePart } from '../lit-html.js';
-export declare const unsafeHTML: (value: any) => Directive<NodePart>;
+import { Part } from '../lit-html.js';
+export declare const unsafeHTML: (value: any) => (part: Part) => void;
 //# sourceMappingURL=unsafe-html.d.ts.map

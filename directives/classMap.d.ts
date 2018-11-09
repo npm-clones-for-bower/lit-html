@@ -11,7 +11,7 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-import { AttributePart, Directive } from '../lit-html.js';
+import { Part } from '../lit-html.js';
 export interface ClassInfo {
     [name: string]: string | boolean | number;
 }
@@ -25,5 +25,5 @@ export interface ClassInfo {
  * `{foo: bar}` applies the class `foo` if the value of `bar` is truthy.
  * @param classInfo {ClassInfo}
  */
-export declare const classMap: (classInfo: ClassInfo) => Directive<AttributePart>;
+export declare const classMap: (classInfo: ClassInfo) => (part: Part) => void;
 //# sourceMappingURL=classMap.d.ts.map

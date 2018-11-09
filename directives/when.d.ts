@@ -11,7 +11,7 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-import { Directive, NodePart } from '../lit-html.js';
+import { Part } from '../lit-html.js';
 /**
  * Efficiently switches between two templates based on the given condition. The
  * rendered content is cached, and re-used when switching conditions. Templates
@@ -36,5 +36,5 @@ import { Directive, NodePart } from '../lit-html.js';
  * @param trueValue the value to render given a true condition
  * @param falseValue the value to render given a false condition
  */
-export declare const when: (condition: any, trueValue: () => any, falseValue: () => any) => Directive<NodePart>;
+export declare const when: (condition: any, trueValue: () => any, falseValue: () => any) => (parentPart: Part) => void;
 //# sourceMappingURL=when.d.ts.map

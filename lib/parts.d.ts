@@ -117,24 +117,14 @@ export declare class PropertyCommitter extends AttributeCommitter {
 }
 export declare class PropertyPart extends AttributePart {
 }
-declare global {
-    interface EventListenerOptions {
-        capture?: boolean;
-        once?: boolean;
-        passive?: boolean;
-    }
-}
 export declare class EventPart implements Part {
     element: Element;
     eventName: string;
     eventContext?: EventTarget;
     value: any;
-    _options?: {
-        capture?: boolean;
-        passive?: boolean;
-        once?: boolean;
-    };
+    _options?: AddEventListenerOptions;
     _pendingValue: any;
+    _boundHandleEvent: (event: Event) => void;
     constructor(element: Element, eventName: string, eventContext?: EventTarget);
     setValue(value: any): void;
     commit(): void;

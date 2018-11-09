@@ -11,7 +11,7 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-import { directive, isPrimitive } from '../lit-html.js';
+import { directive, isPrimitive, NodePart } from '../lit-html.js';
 /**
  * Renders the result as HTML, rather than text.
  *
@@ -20,7 +20,10 @@ import { directive, isPrimitive } from '../lit-html.js';
  * vulnerabilities.
  */
 const previousValues = new WeakMap();
-export const unsafeHTML = (value) => directive((part) => {
+export const unsafeHTML = directive((value) => (part) => {
+    if (!(part instanceof NodePart)) {
+        throw new Error('unsafeHTML can only be used in text bindings');
+    }
     // Dirty check primitive values
     const previousValue = previousValues.get(part);
     if (previousValue === value && isPrimitive(value)) {

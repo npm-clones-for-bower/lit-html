@@ -32,7 +32,7 @@ const previousExpressions = new WeakMap();
  * @param expression the expression to check before re-rendering
  * @param valueFn function which returns the render value
  */
-export const guard = (expression, valueFn) => directive((part) => {
+export const guard = directive((expression, valueFn) => (part) => {
     // Dirty check previous expression
     if (previousExpressions.get(part) === expression) {
         return;

@@ -11,7 +11,7 @@
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-import { AttributePart, Directive } from '../lit-html.js';
+import { Part } from '../lit-html.js';
 export interface StyleInfo {
     [name: string]: string;
 }
@@ -23,5 +23,5 @@ export interface StyleInfo {
  * sets these properties to the element's style.
  * @param styleInfo {StyleInfo}
  */
-export declare const styleMap: (styleInfo: StyleInfo) => Directive<AttributePart>;
+export declare const styleMap: (styleInfo: StyleInfo) => (part: Part) => void;
 //# sourceMappingURL=styleMap.d.ts.map
